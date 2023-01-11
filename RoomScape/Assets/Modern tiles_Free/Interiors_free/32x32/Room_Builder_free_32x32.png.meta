@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -5325,8 +5325,8 @@ TextureImporter:
       Room_Builder_free_32x32_158: -182232112
       Room_Builder_free_32x32_242: 468947400
       Room_Builder_free_32x32_136: 626407292
-      Room_Builder_free_32x32_157: 1134857699
       Room_Builder_free_32x32_236: 1795375662
+      Room_Builder_free_32x32_157: 1134857699
       Room_Builder_free_32x32_39: 781557332
       Room_Builder_free_32x32_162: -1512229223
       Room_Builder_free_32x32_99: 1050505700
