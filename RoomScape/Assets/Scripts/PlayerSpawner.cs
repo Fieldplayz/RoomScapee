@@ -22,6 +22,7 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.Instantiate(playerPrefab.name, spawnPointRoom1.position, spawnPointRoom1.rotation);
+    
         }
         else
         {

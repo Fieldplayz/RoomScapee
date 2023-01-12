@@ -18,6 +18,11 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        if (!photonView.IsMine)
+        {
+            Destroy(GetComponentInChildren<Camera>().gameObject);
+        }
     }
 
     private void OnMovement(InputValue value)
