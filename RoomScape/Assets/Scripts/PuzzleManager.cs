@@ -15,6 +15,12 @@ public enum Puzzles
 
 public class PuzzleManager : MonoBehaviour
 {
+    public static PuzzleManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     [SerializeField] Puzzles puzzle;
 
     [Header("Combination")]
@@ -24,6 +30,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] int digitLeftKey;
     [SerializeField] int digitMiddleKey;
     [SerializeField] int digitRightKey;
+    [SerializeField] public GameObject pianoPanel;
 
     private void Start()
     {
