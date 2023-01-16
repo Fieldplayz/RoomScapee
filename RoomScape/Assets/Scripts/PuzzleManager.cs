@@ -52,15 +52,7 @@ public class PuzzleManager : MonoBehaviour
             digitLeft.text = digit1.ToString();
         }
 
-        if (digit1 == digitLeftKey && digit2 == digitMiddleKey && digit3 == digitRightKey)
-        {
-            digit1 = 0;
-            digitLeft.text = digit1.ToString();
-            digit2 = 0;
-            digitMiddle.text = digit2.ToString();
-            digit3 = 0;
-            digitRight.text = digit3.ToString();
-        }
+        CheckDigits();
     }
 
     public void DigitMiddle()
@@ -80,15 +72,7 @@ public class PuzzleManager : MonoBehaviour
             digitMiddle.text = digit2.ToString();
         }
 
-        if (digit1 == digitLeftKey && digit2 == digitMiddleKey && digit3 == digitRightKey)
-        {
-            digit1 = 0;
-            digitLeft.text = digit1.ToString();
-            digit2 = 0;
-            digitMiddle.text = digit2.ToString();
-            digit3 = 0;
-            digitRight.text = digit3.ToString(); ;
-        }
+        CheckDigits();
     }
 
     public void DigitRight()
@@ -108,6 +92,16 @@ public class PuzzleManager : MonoBehaviour
             digitRight.text = digit3.ToString();
         }
 
+        CheckDigits();
+
+    }
+
+    public void CheckDigits()
+    {
+        int digit1 = int.Parse(digitLeft.text);
+        int digit2 = int.Parse(digitMiddle.text);
+        int digit3 = int.Parse(digitRight.text);
+
         if (digit1 == digitLeftKey && digit2 == digitMiddleKey && digit3 == digitRightKey)
         {
             digit1 = 0;
@@ -118,4 +112,5 @@ public class PuzzleManager : MonoBehaviour
             digitRight.text = digit3.ToString();
         }
     }
+
 }
