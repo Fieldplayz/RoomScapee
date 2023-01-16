@@ -935,6 +935,7 @@ MonoBehaviour:
   digitLeftKey: 3
   digitMiddleKey: 3
   digitRightKey: 5
+  pianoPanel: {fileID: 376632221}
 --- !u!1 &376632221
 GameObject:
   m_ObjectHideFlags: 0
