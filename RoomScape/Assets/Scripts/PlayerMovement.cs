@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Photon.Pun;
 
+
 public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     [SerializeField] float movementSpeed = 5f;
@@ -25,11 +26,11 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         }
     }
 
-    private void OnMovement(InputValue value)
+    public void OnMovement(InputAction.CallbackContext context)
     {
         if (photonView.IsMine)
         {
-            movement = value.Get<Vector2>();
+            movement = context.ReadValue<Vector2>();
 
             if (movement.x != 0 || movement.y != 0)
             {
