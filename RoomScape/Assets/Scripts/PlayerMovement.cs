@@ -59,13 +59,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (photonView.IsMine)
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                PuzzleManager.instance.pianoPanel.SetActive(true);
-            }
-        }
+        
         
     }
 }

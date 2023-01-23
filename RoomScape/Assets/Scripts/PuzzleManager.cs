@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
 
@@ -21,7 +22,6 @@ public class PuzzleManager : MonoBehaviour
         instance = this;
     }
 
-    [SerializeField] Puzzles puzzle;
 
     [Header("Combination")]
     [SerializeField] TMP_Text digitLeft;
@@ -30,7 +30,13 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] int digitLeftKey;
     [SerializeField] int digitMiddleKey;
     [SerializeField] int digitRightKey;
+    
+
+    [Header("Piano")]
     [SerializeField] public GameObject pianoPanel;
+    [SerializeField] string[] notes;
+
+    private int noteNumber = 0;
 
     private void Start()
     {
@@ -117,6 +123,31 @@ public class PuzzleManager : MonoBehaviour
             digitMiddle.text = digit2.ToString();
             digit3 = 0;
             digitRight.text = digit3.ToString();
+        }
+    }
+
+    public void CheckPianoNotes()
+    {
+        string note = EventSystem.current.currentSelectedGameObject.name;
+        
+        if(note == notes[noteNumber])
+        {
+            
+            
+            noteNumber++;
+            Debug.Log("Correct");
+        }
+        else
+        {
+            noteNumber = 0;
+            Debug.Log("False");
+                            
+        }
+
+        if (noteNumber == notes.Length)
+        {
+            Debug.Log("Deur open");
+            noteNumber = 0;
         }
     }
 
