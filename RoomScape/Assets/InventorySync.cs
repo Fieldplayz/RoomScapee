@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 using UnityEngine.InputSystem;
 
-public class InventorySync : MonoBehaviourPunCallbacks, IPunObservable
+public class InventorySync : MonoBehaviourPunCallbacks
 {
     public GameObject inventoryPanel;
     public GameObject Content;
@@ -77,19 +77,5 @@ public class InventorySync : MonoBehaviourPunCallbacks, IPunObservable
     private void UseItem()
     {
 
-    }
-
-    // this is for sharing your inventory with other players in the room.
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(itemList);
-        }
-        else
-        {
-            itemList = (List<Items>)stream.ReceiveNext(); 
-        }
     }
 }
