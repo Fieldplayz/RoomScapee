@@ -9,9 +9,12 @@ public class InventorySync : MonoBehaviourPunCallbacks
 {
     public GameObject inventoryPanel;
     public GameObject Content;
+    public GameObject Content2;
     public GameObject ItemPrefab;
 
     public List<Items> itemList = new List<Items>();
+
+    public Items primaryItem;
 
     private bool state = false;
 
@@ -33,12 +36,10 @@ public class InventorySync : MonoBehaviourPunCallbacks
 
     // this is for the inventory system
 
-    private void Trade()
-    {
-
-    } 
+    
     public void OnOpenOrCloseInventory(InputAction.CallbackContext context)
     {
+        inventoryPanel.GetComponentInChildren<Button>().onClick.AddListener(() => Test(5));
         if (state)
         {
             state = false;
@@ -48,6 +49,7 @@ public class InventorySync : MonoBehaviourPunCallbacks
             state = true;
         }        
         inventoryPanel.SetActive(state);
+        UpdateInventory();
     } 
     public void AddToInventory(Items item)
     {
@@ -70,11 +72,18 @@ public class InventorySync : MonoBehaviourPunCallbacks
         {
             ItemPrefab.GetComponentInChildren<Image>().sprite = item.Icon;
             ItemPrefab.GetComponentInChildren<TMPro.TMP_Text>().text = item.Name;
+            ItemPrefab.GetComponentInChildren<Button>().onClick.AddListener(() => SetPrimaryItem(item));
             Instantiate(ItemPrefab, Content.transform);
         }
     }
 
-    private void UseItem()
+
+    public void SetPrimaryItem(Items item)
+    {
+        primaryItem = item;
+    }
+
+    public void Test(int number)
     {
 
     }
