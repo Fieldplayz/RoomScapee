@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using Photon.Pun;
-
+using Photon.Realtime;
 
 public class PlayerMovement : MonoBehaviourPunCallbacks
 {
@@ -62,5 +63,17 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     {
         
         
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+       LeaveRoom();
+    }
+    
+
+    [PunRPC]
+    public void LeaveRoom()
+    {
+        SceneManager.LoadScene(0);
     }
 }

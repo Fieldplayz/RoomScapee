@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TestSceneHicham 1.unity
-    guid: 5cfb058e720043d498ac3dbd1af8c2de
-  - enabled: 0
     path: Assets/Scenes/TestSceneHicham.unity
     guid: 1e188796681f0304c877bd73e7c27e7b
+  - enabled: 1
+    path: Assets/Scenes/TestSceneHicham 1.unity
+    guid: 5cfb058e720043d498ac3dbd1af8c2de
   m_configObjects: {}
