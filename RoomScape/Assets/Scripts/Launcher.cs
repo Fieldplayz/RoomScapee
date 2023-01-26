@@ -42,6 +42,9 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public GameObject roomTestButton;
 
+    private bool player1 = false;
+    private bool player2 = false;
+
     private void Start()
     {
         CloseMenus();
@@ -110,6 +113,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             RoomOptions options = new RoomOptions();
             options.MaxPlayers = 2;
+            
 
             PhotonNetwork.CreateRoom(roomNameInput.text, options);
 
@@ -145,6 +149,8 @@ public class Launcher : MonoBehaviourPunCallbacks
         CloseMenus();
         roomScreen.SetActive(true);
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+
+        
 
         ListAllPlayers();
 

@@ -1035,7 +1035,7 @@ MonoBehaviour:
   theRoomButton: {fileID: 748356814}
   nameInputScreen: {fileID: 356536693}
   playerNameInput: {fileID: 1918487310}
-  levelToPlay: TestSceneHicham 1
+  levelToPlay: TestSceneHicham
   startButton: {fileID: 982769924}
   roomTestButton: {fileID: 980329410}
 --- !u!1 &324468102
